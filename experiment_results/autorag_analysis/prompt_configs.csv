@@ -1,0 +1,271 @@
+trial,node_line,node,filename,module_name,module_params,execution_time,average_prompt_token,prompt_maker_bleu,prompt_maker_meteor,prompt_maker_rouge,prompt_maker_sem_score,is_best,prompt_text,prompt_hash,prompt_topic,family
+10,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015850861867268,5195.0,0.7666506366547482,0.2083098018436566,0.0765127863930259,0.3163180186300715,True,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+10,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015320777893066,5195.0,0.7666506366547482,0.2083098018436566,0.0765127863930259,0.3163180186300715,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1
+10,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0014777978261311,5201.0,0.7666506366547482,0.2083098018436566,0.0765127863930259,0.3163180186300715,False,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+11,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015694300333658,5195.0,1.5274690093793053,0.2125401785818449,0.0868679924904824,0.3353889353288516,True,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+11,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015180905659993,5195.0,1.5274690093793053,0.2125401785818449,0.0868679924904824,0.3353889353288516,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1
+11,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015059312184651,5201.0,1.5274690093793053,0.2125401785818449,0.0868679924904824,0.3353889353288516,False,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+12,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015824635823567,5201.0,3.092049084647172,0.2653003097140423,0.1044588130499121,0.484921424195214,True,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+12,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015149116516113,5195.0,3.092049084647172,0.2653003097140423,0.1044588130499121,0.484921424195214,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1
+12,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015112559000651,5195.0,3.092049084647172,0.2653003097140423,0.1044588130499121,0.484921424195214,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+13,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015549659729003,5195.0,1.017884579331162,0.2107979206275959,0.0887510119048427,0.3594842368007898,True,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1
+13,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.001515785853068,5195.0,1.017884579331162,0.2107979206275959,0.0887510119048427,0.3594842368007898,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+13,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015161832173665,5201.0,1.017884579331162,0.2107979206275959,0.0887510119048427,0.3594842368007898,False,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+15,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015657742818196,5195.0,0.5857154875303267,0.1855786612149902,0.0828206594081709,0.3304086206986533,True,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1
+15,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015369256337483,5195.0,0.5857154875303267,0.1855786612149902,0.0828206594081709,0.3304086206986533,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+15,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015217463175455,5201.0,0.5857154875303267,0.1855786612149902,0.0828206594081709,0.3304086206986533,False,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+16,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015261173248291,5195.0,1.789397163197493,0.2027265244329454,0.0989626847859263,0.3643570966784251,True,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1
+16,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0019529660542805,5195.0,1.789397163197493,0.2027265244329454,0.0989626847859263,0.3643570966784251,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+16,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0014873345692952,5201.0,1.789397163197493,0.2027265244329454,0.0989626847859263,0.3643570966784251,False,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+6,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015714168548583,5195.0,0.5374474522848232,0.1643180499230578,0.0790307950915861,0.3368389123502366,True,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1
+6,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015958944956461,5195.0,0.5374474522848232,0.1643180499230578,0.0790307950915861,0.3368389123502366,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+6,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0014890829722086,5201.0,0.5374474522848232,0.1643180499230578,0.0790307950915861,0.3368389123502366,False,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+7,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015864372253417,5201.0,4.115731584986372,0.2613277500552312,0.1203310913455841,0.4926126823757306,True,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+7,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015037854512532,5195.0,4.115731584986372,0.2613277500552312,0.1203310913455841,0.4926126823757306,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+7,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0019076665242513,5195.0,4.115731584986372,0.2613277500552312,0.1203310913455841,0.4926126823757306,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1
+8,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015525023142496,5195.0,0.582433459382261,0.1678187726810545,0.0790338838446539,0.279224232644677,True,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1
+8,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.001501719156901,5195.0,0.582433459382261,0.1678187726810545,0.0790338838446539,0.279224232644677,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+8,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.002102772394816,5201.0,0.582433459382261,0.1678187726810545,0.0790338838446539,0.279224232644677,False,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+9,post_retrieve_node_line_1,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0023636817932128,5201.0,2.686893478658908,0.2559155828402072,0.1116090415110716,0.4374834755438082,True,"You are a US Naval Officer. An unknown object is approaching your ship. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",4c85a17d,your ship,F1
+9,post_retrieve_node_line_1,prompt_maker,1.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0015163421630859,5195.0,2.686893478658908,0.2559155828402072,0.1116090415110716,0.4374834755438082,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",db2425c6,friendly ship,F1
+9,post_retrieve_node_line_1,prompt_maker,2.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.001500129699707,5195.0,2.686893478658908,0.2559155828402072,0.1116090415110716,0.4374834755438082,False,"You are a US Naval Officer. 
+
+What are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?
+
+Using the following information as context, please provide a detailed answer:
+
+{retrieved_contents}
+
+Answer:",0335f4c9,enemy ship,F1

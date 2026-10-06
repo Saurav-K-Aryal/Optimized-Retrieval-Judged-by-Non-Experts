@@ -1,0 +1,5 @@
+node_line_name,node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+retrieve_node_line,retrieval,0.parquet,VectorDB,"{'top_k': 20, 'embedding_model': 'huggingface_all_mpnet_base_v2'}",0.2571529547373454
+retrieve_node_line,passage_reranker,0.parquet,PassReranker,{'top_k': 3},0.002586285273234
+post_retrieve_node_line,prompt_maker,0.parquet,Fstring,"{'prompt': 'You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:'}",0.0021499792734781
+post_retrieve_node_line,generator,0.parquet,LlamaIndexLLM,"{'llm': 'ollama', 'model': 'llama3', 'request_timeout': 30}",7.33760126431783

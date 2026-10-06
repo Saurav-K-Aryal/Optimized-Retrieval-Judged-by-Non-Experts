@@ -1,0 +1,224 @@
+{
+ "retrieval": {
+  "module": "HybridCC",
+  "params": "{'top_k': 20, 'target_modules': ('VectorDB', 'BM25'), 'weights': (0.5, 0.5), 'weight': 0.08, 'target_module_params': ({'top_k': 20, 'embedding_model': 'huggingface_all_mpnet_base_v2', 'return_metadata': 'timestamp'}, {'top_k': 20})}",
+  "trial": "6",
+  "filename": "34.parquet",
+  "metrics": {
+   "retrieval_ndcg": 0.666667,
+   "retrieval_map": 0.666667,
+   "retrieval_mrr": 0.666667,
+   "retrieval_f1": 0.063492,
+   "retrieval_recall": 0.666667,
+   "retrieval_precision": 0.033333
+  },
+  "n_tied": 27,
+  "tied_modules": [
+   "HybridCC"
+  ]
+ },
+ "passage_reranker": {
+  "module": "PassReranker",
+  "params": "{'batch_size': 1, 'top_k': 3}",
+  "trial": "15",
+  "filename": "0.parquet",
+  "metrics": {
+   "passage_reranker_retrieval_f1": 0.333333,
+   "passage_reranker_retrieval_recall": 0.666667,
+   "passage_reranker_retrieval_precision": 0.222222
+  },
+  "n_tied": 60,
+  "tied_modules": [
+   "ColbertReranker",
+   "KoReranker",
+   "PassReranker",
+   "RankGPT",
+   "Tart",
+   "Upr"
+  ]
+ },
+ "prompt_maker": {
+  "module": "Fstring",
+  "params": "{'prompt': 'You are a US Naval Officer. \\n\\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\\n\\nUsing the following information as context, please provide a detailed answer:\\n\\n{retrieved_contents}\\n\\nAnswer:'}",
+  "trial": "7",
+  "filename": "1.parquet",
+  "metrics": {
+   "prompt_maker_sem_score": 0.492613,
+   "prompt_maker_meteor": 0.261328,
+   "prompt_maker_rouge": 0.120331,
+   "prompt_maker_bleu": 4.115732
+  },
+  "n_tied": 3,
+  "tied_prompts": 3
+ },
+ "generator": {
+  "module": "LlamaIndexLLM",
+  "params": "{'batch_size': 1, 'llm': 'ollama', 'model': 'llama3.1', 'request_timeout': 30, 'temperature': 0.1, 'top_p': 0.5, 'top_k': 10, 'min_p': 0.1, 'max_length': 512, 'context_length': 512, 'prompt_batch_size': 16, 'repeat_penalty_tokens': 5, 'repeat_penalty': 1.2}",
+  "trial": "15",
+  "filename": "1.parquet",
+  "metrics": {
+   "bleu": 2.102676968173791,
+   "rouge": 0.1003632119947183,
+   "meteor": 0.2265051827162778,
+   "sem_score": 0.4915413803900019,
+   "bert_score": 0.8224091728528341
+  },
+  "composite_minmax": 0.8587012656515863,
+  "composite_rank": 16.2,
+  "autorag_is_best_in_its_trial": false
+ },
+ "autorag_best_per_trial": [
+  {
+   "trial": "15",
+   "model": "llama3.1",
+   "context_length": 512.0,
+   "filename": "2.parquet",
+   "bleu": 2.401734135226279,
+   "rouge": 0.0779505265549904,
+   "meteor": 0.209900007647217,
+   "sem_score": 0.5057538288267729,
+   "bert_score": 0.8287767171859741,
+   "composite_minmax": 0.8340348157875818
+  },
+  {
+   "trial": "16",
+   "model": "llama3.1",
+   "context_length": 1024.0,
+   "filename": "2.parquet",
+   "bleu": 1.714268998348674,
+   "rouge": 0.0759580736679973,
+   "meteor": 0.1908722299595246,
+   "sem_score": 0.4725102250193127,
+   "bert_score": 0.8206760088602701,
+   "composite_minmax": 0.638744260808786
+  },
+  {
+   "trial": "11",
+   "model": "qwen2.5",
+   "context_length": 1024.0,
+   "filename": "11.parquet",
+   "bleu": 1.1862007841542743,
+   "rouge": 0.0706677265500795,
+   "meteor": 0.18291537304979,
+   "sem_score": 0.4695475700327723,
+   "bert_score": 0.8259039322535197,
+   "composite_minmax": 0.5915809261277785
+  },
+  {
+   "trial": "6",
+   "model": "deepseek-r1",
+   "context_length": 512.0,
+   "filename": "11.parquet",
+   "bleu": 1.170398325064362,
+   "rouge": 0.0593828289589091,
+   "meteor": 0.1701958392339041,
+   "sem_score": 0.5092085827907875,
+   "bert_score": 0.8288072943687439,
+   "composite_minmax": 0.5771329680611503
+  },
+  {
+   "trial": "7",
+   "model": "deepseek-r1",
+   "context_length": 1024.0,
+   "filename": "7.parquet",
+   "bleu": 1.0794426453520078,
+   "rouge": 0.0569294918826185,
+   "meteor": 0.1815136184218027,
+   "sem_score": 0.4287683672479074,
+   "bert_score": 0.8264301419258118,
+   "composite_minmax": 0.5044921588469268
+  },
+  {
+   "trial": "10",
+   "model": "qwen2.5",
+   "context_length": 512.0,
+   "filename": "14.parquet",
+   "bleu": 1.302887984981011,
+   "rouge": 0.0628238564577606,
+   "meteor": 0.1729791443304874,
+   "sem_score": 0.4780627583492283,
+   "bert_score": 0.8163652022679647,
+   "composite_minmax": 0.4908957829856603
+  },
+  {
+   "trial": "9",
+   "model": "deepseek-r1:14b",
+   "context_length": 1024.0,
+   "filename": "12.parquet",
+   "bleu": 1.1279209044671727,
+   "rouge": 0.0549524738360948,
+   "meteor": 0.1888323826367501,
+   "sem_score": 0.4046546419016785,
+   "bert_score": 0.8244763811429342,
+   "composite_minmax": 0.48428445810356485
+  },
+  {
+   "trial": "8",
+   "model": "deepseek-r1:14b",
+   "context_length": 512.0,
+   "filename": "12.parquet",
+   "bleu": 0.8975532249224677,
+   "rouge": 0.0458212041271843,
+   "meteor": 0.1651235705930183,
+   "sem_score": 0.4852804970518379,
+   "bert_score": 0.8268755078315735,
+   "composite_minmax": 0.46215299328212184
+  },
+  {
+   "trial": "12",
+   "model": "qwen2.5:14b",
+   "context_length": 512.0,
+   "filename": "0.parquet",
+   "bleu": 0.9876259971711856,
+   "rouge": 0.069585543651116,
+   "meteor": 0.2088164799979703,
+   "sem_score": 0.3131825105448204,
+   "bert_score": 0.818673570950826,
+   "composite_minmax": 0.4495361019226105
+  },
+  {
+   "trial": "13",
+   "model": "qwen2.5:14b",
+   "context_length": 1024.0,
+   "filename": "9.parquet",
+   "bleu": 1.1319372411921065,
+   "rouge": 0.0634083571307322,
+   "meteor": 0.189701517684638,
+   "sem_score": 0.3901214775602484,
+   "bert_score": 0.8146387338638306,
+   "composite_minmax": 0.4313362465784724
+  }
+ ],
+ "best_by_single_metric": {
+  "bleu": {
+   "trial": "15",
+   "model": "llama3.1",
+   "filename": "2.parquet",
+   "value": 2.401734135226279
+  },
+  "rouge": {
+   "trial": "15",
+   "model": "llama3.1",
+   "filename": "1.parquet",
+   "value": 0.1003632119947183
+  },
+  "meteor": {
+   "trial": "15",
+   "model": "llama3.1",
+   "filename": "1.parquet",
+   "value": 0.2265051827162778
+  },
+  "sem_score": {
+   "trial": "6",
+   "model": "deepseek-r1",
+   "filename": "2.parquet",
+   "value": 0.5321483527689419
+  },
+  "bert_score": {
+   "trial": "6",
+   "model": "deepseek-r1",
+   "filename": "10.parquet",
+   "value": 0.8335066437721252
+  }
+ }
+}

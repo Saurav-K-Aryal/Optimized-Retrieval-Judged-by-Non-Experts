@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,average_output_token,bleu,meteor,rouge,sem_score,is_best
+0.parquet,LlamaIndexLLM,"{'llm': 'ollama', 'model': 'llama3', 'request_timeout': 30}",3.952664931615194,193.66666666666666,16.930672727803362,0.6221538027853291,0.31190567792108304,0.8013274208160639,True

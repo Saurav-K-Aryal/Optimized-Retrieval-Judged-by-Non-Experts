@@ -1,0 +1,97 @@
+node_lines:
+- node_line_name: retrieve_node_line  # -----------------------------------------------------------
+  nodes: # responsible for retrieveing relevant information
+    - node_type: retrieval 
+      strategy:
+        metrics: [retrieval_f1, retrieval_recall, retrieval_precision, retrieval_mrr, retrieval_map, retrieval_ndcg] # Evaluation metrics
+      top_k: 20 # retrieve n results
+      modules:
+        - module_type: bm25 # a traditional text-based retrieval algorithm
+        - module_type: vectordb # uses embeddings from the following models:
+          embedding_model: 
+          - huggingface_all_mpnet_base_v2 #
+          - upstage_embed
+          - cohere_embed
+          - huggingface_bge_m3
+          - huggingface_cointegrated_rubert_tiny2
+          - huggingface_baai_bge_small
+          - type: huggingface
+            model_name: colbert-ir/colbertv2.0
+          - type: huggingface
+            model_name: intfloat/e5-large-v2
+          - type: huggingface
+            model_name: Salesforce/SFR-Embedding-2_R
+          - type: huggingface
+            model_name: Alibaba-NLP/gte-Qwen2-7B-instruct
+          return_metadata: ["source", "timestamp", "content"]  # Avoids duplicate fields
+        - module_type: hybrid_rrf # reciprocal rank fusion, combines results from target_modules
+          target_modules: ('bm25', 'vectordb')  
+          rrf_k: [ 3, 5, 10 ]  # The rrf_k parameter influences the weight given to each document's rank in the final score calculation
+        - module_type: hybrid_cc # Confidence Combination, combines results from target_modules
+          target_modules: ('bm25', 'vectordb')
+          weights:
+            - (0.5, 0.5)
+            - (0.3, 0.7)
+            - (0.7, 0.3)
+    - node_type: passage_reranker # reranks the retrieved passages using listed methods
+      batch_size: 1
+      strategy: 
+        metrics: [retrieval_f1, retrieval_recall, retrieval_precision] # evaluation metrics
+      top_k: 3 # selects top n results after ranking
+      modules:
+        - module_type: pass_reranker # doesn't actually perform reranking, but allows testing performance without using any reranker
+        - module_type: tart # text and relevance transformer
+        - module_type: upr # unified passage reranker
+        # - module_type: monot5
+        - module_type: koreranker
+        - module_type: rankgpt
+        - module_type: colbert_reranker
+          model_name: colbert-ir/colbertv2.0
+        # - module_type: flag_embedding_reranker
+        #   model_name: BAAI/bge-reranker-large
+        # - module_type: flag_embedding_llm_reranker
+        #   model_name: BAAI/bge-reranker-v2-gemma
+- node_line_name: post_retrieve_node_line_1  # -----------------------------------------------------------
+  nodes: # handles the generation of the responses based on retrieved information
+    - node_type: prompt_maker # uses a module type below to create prompts
+      strategy:
+        metrics: [bleu, meteor, rouge, sem_score] # evaluation metrics
+      modules:
+        - module_type: fstring # uses a formatted string template to create prompts 
+          prompt:
+            - "You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:"
+            - "You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:"
+            - "You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:"            
+    - node_type: generator # component responsible for generating responses using selected LLM
+      batch_size: 1
+      strategy:
+        metrics: [bleu, rouge, meteor, sem_score, bert_score] # evaluation metrics
+      modules:
+        - module_type: llama_index_llm # generator module
+          llm: ollama
+          model: qwen2.5
+          request_timeout: 30
+          temperature: [0.1, 0.5, 1.0]
+          top_p: [0.1, 0.5, 1.0]
+          top_k: 10
+          min_p: 0.1
+          max_length: 512
+          context_length: 512 # Context length from list
+          prompt_batch_size: 16 
+          repeat_penalty_tokens: 5
+          repeat_penalty: 1.2
+        - module_type: llama_index_llm # generator module
+          llm: ollama
+          model: qwen2.5
+          request_timeout: 30
+          temperature: [0.1, 0.5, 1.0]
+          top_p: [0.1, 0.5, 1.0]
+          top_k: 90
+          min_p: 0.9
+          max_length: 512
+          context_length: 512 # Context length from list
+          prompt_batch_size: 16 
+          repeat_penalty_tokens: 5
+          repeat_penalty: 1.2
+
+

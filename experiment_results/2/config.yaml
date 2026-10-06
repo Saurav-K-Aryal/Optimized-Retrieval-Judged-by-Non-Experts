@@ -1,0 +1,132 @@
+# vectordb:
+#   - name: mpnet_base_chroma
+#     db_type: chroma
+#     client_type: persistent
+#     embedding_model: huggingface_all_mpnet_base_v2
+#     collection_name: huggingface_all_mpnet_base_v2
+#     path: ${PROJECT_DIR}/data/chroma
+node_lines:
+- node_line_name: retrieve_node_line  # -----------------------------------------------------------
+  nodes: # responsible for retrieveing relevant information
+    - node_type: retrieval 
+      strategy:
+        metrics: [retrieval_f1, retrieval_recall, retrieval_precision] # Evaluation metrics
+      top_k: 20 # retrieve n results
+      modules:
+        - module_type: bm25 # a traditional text-based retrieval algorithm
+        - module_type: vectordb # uses embeddings from the 'huggingface_all_mpnet_base_v2' model
+          embedding_model: huggingface_all_mpnet_base_v2
+          # vectordb: mpnet_base_chroma
+        - module_type: hybrid_rrf # reciprocal rank fusion, combines results from target_modules
+          target_modules: ('bm25', 'vectordb')  
+          rrf_k: [ 3, 5, 10 ]  # The rrf_k parameter influences the weight given to each document's rank in the final score calculation
+        - module_type: hybrid_cc # Confidence Combination, combines results from target_modules
+          target_modules: ('bm25', 'vectordb')
+          weights:
+            - (0.5, 0.5)
+            - (0.3, 0.7)
+            - (0.7, 0.3)
+          # normalize_method: [ mm, tmm, z, dbsf ]
+    - node_type: passage_reranker # reranks the retrieved passages using listed methods
+      strategy: 
+        metrics: [retrieval_f1, retrieval_recall, retrieval_precision] # evaluation metrics
+      top_k: 3 # selects top n results after ranking
+      modules:
+        - module_type: pass_reranker # doesn't actually perform reranking, but allows testing performance without using any reranker
+        - module_type: tart # text and relevance transformer
+        - module_type: upr # unified passage reranker
+        # - module_type: monot5
+        # - module_type: colbert
+        # - module_type: cohere_reranker
+        #   api_key: COHERE_API_KEY
+        #   batch: 64
+        #   model: rerank-multilingual-v2.0
+        # - module_type: rankgpt
+        # - module_type: ko reranker
+        # - module_type: flag_reranker
+        #   model: xlm-roberta-base
+        # - module_type: flag_llm_reranker
+        #   model: gemma-2b
+        # - module_type: sentence_transformer_reranker
+        #   model: ms-marco-MiniLM-L-2-v2
+- node_line_name: post_retrieve_node_line  # -----------------------------------------------------------
+  nodes: # handles the generation of the responses based on retrieved information
+    - node_type: prompt_maker # uses a module type below to create prompts
+      strategy:
+        metrics: [bleu, meteor, rouge, sem_score] # evaluation metrics
+        # generator_modules:
+        #   - module_type: vllm
+        #     llm: mistralai/Mistral-7B-Instruct-v0.2
+      modules:
+        - module_type: fstring # uses a formatted string template to create prompts 
+          prompt:
+            - "You are a US Naval Officer. An unknown object is approaching your ship. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not an approaching object is a ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:"
+            - "You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching friendly ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:"
+            - "You are a US Naval Officer. \n\nWhat are the standard operating procedures you, as the Naval officer, use to determine whether or not to run/flee or engage an approaching enemy ship?\n\nUsing the following information as context, please provide a detailed answer:\n\n{retrieved_contents}\n\nAnswer:"            
+            # - "There is a passages related to user question. Please response carefully to the following question. \n\n Passage: {retrieved_contents} \n\n Question: {query} \n\n Answer the question. Think step by step." # Zero-shot CoT prompt
+            # - "Answer to given questions with the following passage: {retrieved_contents} \n\n Question: {query} \n\n Answer:"
+            # - "{retrieved_contents} \n\n Read the passage carefully, and answer this question. \n\n Question: {query} \n\n Answer the question. Be concise." # concise prompt
+    - node_type: generator # component responsible for generating responses using selected LLM
+      strategy:
+        metrics: [bleu, meteor, rouge, sem_score] # evaluation metrics
+      modules:
+        - module_type: llama_index_llm # generator module
+          llm: ollama
+          model: llama3
+          request_timeout: 30
+          # temperature: [0.1, 0.5, 1.1]
+        # - module_type: openai_llm
+        #   model: gpt-4
+        #   temperature: 0.7
+        # - module_type: huggingface_llm
+        #   model: google/flan-t5-xxl
+
+# node_lines:
+#   - node_line_name: retrieve_node_line
+#     nodes:
+#       - node_type: retrieval
+#         strategy:
+#           metrics: [ retrieval_f1, retrieval_recall, retrieval_precision ]
+#         top_k: 3
+#         modules:
+#           - module_type: bm25
+#           - module_type: vectordb
+#             embedding_model: huggingface_all_mpnet_base_v2
+#           - module_type: hybrid_rrf
+#             target_modules: ('bm25', 'vectordb')
+#             rrf_k: [ 3, 5, 10 ]
+#           - module_type: hybrid_cc
+#             target_modules: ('bm25', 'vectordb')
+#             weights:
+#               - (0.5, 0.5)
+#               - (0.3, 0.7)
+#               - (0.7, 0.3)
+#           # - module_type: hybrid_rsf
+#           #   target_modules: ('bm25', 'vectordb')
+#           #   weights:
+#           #     - (0.5, 0.5)
+#           #     - (0.3, 0.7)
+#           #     - (0.7, 0.3)
+#           # - module_type: hybrid_dbsf
+#           #   target_modules: ('bm25', 'vectordb')
+#           #   weights:
+#           #     - (0.5, 0.5)
+#           #     - (0.3, 0.7)
+#           #     - (0.7, 0.3)
+#   - node_line_name: post_retrieve_node_line
+#     nodes:
+#       - node_type: prompt_maker
+#         strategy:
+#           metrics: [ meteor, rouge, bert_score ]
+#         modules:
+#           - module_type: fstring
+#             prompt: "Read the passages and answer the given question. \n Question: {query} \n Passage: {retrieved_contents} \n Answer : "
+#       - node_type: generator
+#         strategy:
+#           metrics: [ meteor, rouge, bert_score ]
+#         modules:
+#           - module_type: llama_index_llm
+#             llm: ollama
+#             model: llama3
+#             temperature: [ 0.1, 0.5, 1.0 ]
+#             batch: 1

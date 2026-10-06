@@ -1,0 +1,3 @@
+node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+retrieval,34.parquet,HybridCC,"{'top_k': 20, 'target_modules': ('VectorDB', 'BM25'), 'weights': (0.5, 0.5), 'weight': 0.08, 'target_module_params': ({'top_k': 20, 'embedding_model': 'huggingface_all_mpnet_base_v2', 'return_metadata': 'timestamp'}, {'top_k': 20})}",0.2319726943969726
+passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0016964276631673

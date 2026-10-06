@@ -1,0 +1,5 @@
+node_line_name,node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+retrieve_node_line,retrieval,0.parquet,VectorDB,"{'top_k': 20, 'embedding_model': 'huggingface_all_mpnet_base_v2'}",0.2388064861297607
+retrieve_node_line,passage_reranker,0.parquet,PassReranker,{'top_k': 3},0.0022815068562825
+post_retrieve_node_line,prompt_maker,0.parquet,Fstring,{'prompt': 'There is a passages related to user question. Please response carefully to the following question. \n\n Passage: {retrieved_contents} \n\n Question: {query} \n\n Answer the question. Think step by step.'},0.0021456877390543
+post_retrieve_node_line,generator,0.parquet,LlamaIndexLLM,"{'llm': 'ollama', 'model': 'llama3', 'request_timeout': 30}",3.952664931615194

@@ -1,0 +1,5 @@
+node_line_name,node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+retrieve_node_line,retrieval,0.parquet,VectorDB,"{'top_k': 20, 'embedding_model': 'huggingface_all_mpnet_base_v2'}",0.1953086853027343
+retrieve_node_line,passage_reranker,0.parquet,PassReranker,{'top_k': 3},0.0020471413930257
+post_retrieve_node_line,prompt_maker,0.parquet,Fstring,{'prompt': 'Answer to given questions with the following passage: {retrieved_contents} \n\n Question: {query} \n\n Answer:'},0.002027670542399
+post_retrieve_node_line,generator,0.parquet,LlamaIndexLLM,"{'llm': 'ollama', 'model': 'llama3', 'request_timeout': 30}",2.125519275665283

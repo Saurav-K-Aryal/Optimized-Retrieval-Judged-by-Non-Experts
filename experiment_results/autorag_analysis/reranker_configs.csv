@@ -1,0 +1,61 @@
+trial,node_line,node,filename,module_name,module_params,execution_time,passage_reranker_retrieval_f1,passage_reranker_retrieval_recall,passage_reranker_retrieval_precision,is_best,top_k,batch_size,model_name,family
+10,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0016086101531982,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+10,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.5769960880279541,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+10,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.7392566204071045,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+10,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.801669200261434,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+10,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",0.6148130893707275,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+10,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.2084567546844482,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
+11,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0016203721364339,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+11,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.5735277334849039,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+11,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.7014056046803793,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+11,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.587488571802775,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+11,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",0.6427874565124512,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+11,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.1526401837666829,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
+12,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0015995502471923,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+12,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.5675843556722006,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+12,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.6683203379313151,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+12,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.5919818878173828,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+12,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",0.741750160853068,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+12,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.1552699406941732,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
+13,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0016092459360758,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+13,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.5625136693318685,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+13,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.7380521297454834,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+13,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.5846896966298422,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+13,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",0.5141507784525553,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+13,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.1899225711822509,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
+15,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0015879472096761,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+15,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.5644149780273438,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+15,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.7077642281850179,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+15,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.6035044193267822,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+15,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",0.7445724010467529,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+15,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.145105759302775,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
+16,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0016381740570068,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+16,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.5321497122446696,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+16,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.6681305567423502,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+16,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.7191482384999593,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+16,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",1.248729387919108,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+16,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.1450550556182861,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
+6,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0016125837961832,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+6,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.6675355434417725,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+6,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.7618651390075684,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+6,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.6032358010609945,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+6,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",0.7480306625366211,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+6,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.1981050968170166,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
+7,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0016964276631673,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+7,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.5718549092610677,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+7,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.7439374923706055,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+7,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.56173308690389,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+7,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",0.9254818757375082,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+7,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.1909308433532714,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
+8,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.001699686050415,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+8,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.5801664193471273,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+8,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.7582033475240072,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+8,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.6383675734202067,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+8,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",1.1037142276763916,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+8,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.1872541904449463,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
+9,retrieve_node_line,passage_reranker,0.parquet,PassReranker,"{'batch_size': 1, 'top_k': 3}",0.0015979607899983,0.3333333333333333,0.6666666666666666,0.2222222222222222,True,3,1.0,,F1
+9,retrieve_node_line,passage_reranker,1.parquet,Tart,"{'batch_size': 1, 'top_k': 3}",0.5746754805246989,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+9,retrieve_node_line,passage_reranker,2.parquet,Upr,"{'batch_size': 1, 'top_k': 3}",0.7214667797088623,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+9,retrieve_node_line,passage_reranker,3.parquet,KoReranker,"{'batch_size': 1, 'top_k': 3}",0.666081428527832,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+9,retrieve_node_line,passage_reranker,4.parquet,RankGPT,"{'batch_size': 1, 'top_k': 3}",2.559529622395833,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,,F1
+9,retrieve_node_line,passage_reranker,5.parquet,ColbertReranker,"{'batch_size': 1, 'top_k': 3, 'model_name': 'colbert-ir/colbertv2.0'}",0.2034387588500976,0.3333333333333333,0.6666666666666666,0.2222222222222222,False,3,1.0,colbert-ir/colbertv2.0,F1
