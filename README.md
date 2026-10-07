@@ -66,7 +66,7 @@ every output file). Each step can also be run on its own after setting
 All random seeds are fixed; a second run on the same workbook reproduces every output exactly
 (the ordinal step is deterministic given the seed and library versions in `MANIFEST.txt`).
 
-### Generating tables and figures come from
+### Where the paper's tables and figures come from
 
 | Paper | File |
 |---|---|
@@ -76,9 +76,12 @@ All random seeds are fixed; a second run on the same workbook reproduces every o
 | Table: primary mixed models | `out/tables.tex` (`primary_model`); `out/03_model_coefficients.csv` (model `A_rating_crossed`) |
 | Table: robustness | `out/tables.tex` (`robustness`); `out/03_model_coefficients.csv`, `out/04_ordinal_coefficients.csv` |
 | Supplement: cell means, test-retest, text features, source-of-uncertainty tags | `out/tables.tex` (`cell_means`, `test_retest`, `text_features`, `su_tags`) |
-| Figure 1 (means by condition) | `out/fig1_interaction.pdf` |
-| Figure 2 (coefficient plot) | `out/fig4_coefficients.pdf` |
-| Figure 3 (retrieval effect per prompt) | `out/fig3_rag_by_prompt.pdf` |
+| Table: AutoRAG search space and selection (Methods) | `autorag_analysis/analysis/tab_autorag_search.tex` from `autorag_figures.py` |
+| Figure 1 (why each pipeline node was set as it was) | `autorag_analysis/analysis/fig6_autorag_selection.pdf` from `autorag_figures.py` |
+| Figure 2 (means by condition) | `out/fig1_interaction.pdf` |
+| Figure 3 (coefficient plot) | `out/fig4_coefficients.pdf` |
+| Figure 4 (retrieval effect per prompt) | `out/fig3_rag_by_prompt.pdf` |
+| Supplement: every AutoRAG trial, generator models, best configurations | `autorag_analysis/analysis/tab_autorag_trials.tex`, `tab_autorag_generators.tex`, `tab_autorag_topconfigs.tex` |
 | Text-feature model, refusal statistics, notes coding | `out/05_secondary.txt`, `out/05_text_features_model.csv`, `out/05_notes_coded.csv` |
 | Leave-one-labeler-out, simple effects, Bonferroni check | `out/03_models.txt`, `out/03_leave_one_rater_out.csv`, `out/03_simple_effects_*.csv` |
 
@@ -89,6 +92,7 @@ Labelers appear as `L01` to `L09` (no `L04`) in the data and the outputs; the pa
 
     cd autorag_analysis
     python autorag_parse.py /path/to/experiment_results --out analysis
+    python autorag_figures.py analysis analysis
 
 The script walks every trial folder, skips duplicated copies, groups trials into comparable
 families (same prompt templates and metrics), and writes `trials.csv`, per-node configuration
@@ -98,7 +102,10 @@ which tie) are stated at the top of the script. The report's caveats section rec
 trial outputs show about the effective search space (three evaluation queries, identical
 retrieval across the declared embedding models, rerankers tied on every metric, prompt templates
 that hard-code a question, and `context_length` being the generator's context window rather
-than a chunk size). 
+than a chunk size). `autorag_figures.py` reads the parser's CSV tables and draws the
+pipeline-selection figure (retrieval, reranker, generator, and sampling-grid panels) and writes
+the LaTeX tables of the search space, of every trial including the pilot families, of the
+generator models, and of the ten best configurations.
 
 ## Notes
 

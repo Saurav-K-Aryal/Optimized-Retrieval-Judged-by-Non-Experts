@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.xlsx
+ratings_analysis/*.parquet
+ratings_analysis/out/
