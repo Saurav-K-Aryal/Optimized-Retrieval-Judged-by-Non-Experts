@@ -1,4 +1,4 @@
-# Code for "Retrieval Done Right, Judged by Non-Experts"
+# Code for "Optimized Retrieval, Judged by Non-Experts"
 
 Analysis code for the study of how non-expert labelers perceive responses from Llama 3.1 8B
 alone and from the same model inside an AutoRAG-optimized retrieval pipeline, under a
